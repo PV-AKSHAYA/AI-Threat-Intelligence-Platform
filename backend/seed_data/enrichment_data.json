@@ -1,0 +1,180 @@
+{
+  "cves": {
+    "CVE-2023-3519": {
+      "id": "CVE-2023-3519",
+      "cvss": 9.8,
+      "severity": "critical",
+      "description": "Unauthenticated remote code execution vulnerability in Citrix ADC and Citrix Gateway. Allows attackers to execute arbitrary code without authentication on affected appliances.",
+      "affected_products": "Citrix ADC, Citrix Gateway",
+      "exploit_available": true,
+      "malware_families": ["LockBit", "FARGO"],
+      "threat_actors": ["FIN7", "APT41"],
+      "published_date": "2023-07-18",
+      "patch_available": true,
+      "references": ["https://nvd.nist.gov/vuln/detail/CVE-2023-3519"]
+    },
+    "CVE-2024-21887": {
+      "id": "CVE-2024-21887",
+      "cvss": 9.1,
+      "severity": "critical",
+      "description": "Command injection vulnerability in Ivanti Connect Secure and Ivanti Policy Secure. Allows authenticated administrators to send specially crafted requests to execute arbitrary commands.",
+      "affected_products": "Ivanti Connect Secure, Ivanti Policy Secure",
+      "exploit_available": true,
+      "malware_families": ["ZIPLINE", "THINSPOOL", "WIREFIRE"],
+      "threat_actors": ["UNC5221", "APT29"],
+      "published_date": "2024-01-10",
+      "patch_available": true,
+      "references": ["https://nvd.nist.gov/vuln/detail/CVE-2024-21887"]
+    },
+    "CVE-2024-53677": {
+      "id": "CVE-2024-53677",
+      "cvss": 9.5,
+      "severity": "critical",
+      "description": "Critical file upload vulnerability in Apache Struts 2 that allows attackers to upload malicious files and potentially achieve remote code execution.",
+      "affected_products": "Apache Struts 2.0.0 - 2.3.37, 2.5.0 - 2.5.33",
+      "exploit_available": true,
+      "malware_families": ["Mirai", "Muhstik"],
+      "threat_actors": ["APT10", "Lazarus Group"],
+      "published_date": "2024-12-11",
+      "patch_available": true,
+      "references": ["https://nvd.nist.gov/vuln/detail/CVE-2024-53677"]
+    },
+    "CVE-2024-12345": {
+      "id": "CVE-2024-12345",
+      "cvss": 7.5,
+      "severity": "high",
+      "description": "Remote code execution vulnerability in widely used enterprise software component.",
+      "affected_products": "Enterprise Application Suite",
+      "exploit_available": false,
+      "malware_families": [],
+      "threat_actors": [],
+      "published_date": "2024-06-01",
+      "patch_available": true,
+      "references": []
+    },
+    "CVE-2021-44228": {
+      "id": "CVE-2021-44228",
+      "cvss": 10.0,
+      "severity": "critical",
+      "description": "Log4Shell - Remote code execution vulnerability in Apache Log4j 2. Allows unauthenticated remote code execution via JNDI injection.",
+      "affected_products": "Apache Log4j 2.0-beta9 through 2.14.1",
+      "exploit_available": true,
+      "malware_families": ["Mirai", "Conti", "Khonsari"],
+      "threat_actors": ["APT41", "Phosphorus", "Hafnium"],
+      "published_date": "2021-12-09",
+      "patch_available": true,
+      "references": ["https://nvd.nist.gov/vuln/detail/CVE-2021-44228"]
+    },
+    "CVE-2023-44487": {
+      "id": "CVE-2023-44487",
+      "cvss": 7.5,
+      "severity": "high",
+      "description": "HTTP/2 Rapid Reset Attack - A flaw in the HTTP/2 protocol allows a denial-of-service attack by rapidly resetting streams.",
+      "affected_products": "Multiple HTTP/2 implementations",
+      "exploit_available": true,
+      "malware_families": [],
+      "threat_actors": [],
+      "published_date": "2023-10-10",
+      "patch_available": true,
+      "references": []
+    }
+  },
+  "domains": {
+    "secure-login-update.com": {
+      "reputation": "malicious",
+      "category": "phishing",
+      "threat_type": "Credential Phishing",
+      "malware_families": ["Emotet"],
+      "threat_actors": ["FIN7"],
+      "country": "RU",
+      "registrar": "NAMECHEAP",
+      "first_seen": "2023-06-15",
+      "tags": ["phishing", "finance-lure", "credential-harvest"]
+    },
+    "update-service-cdn.com": {
+      "reputation": "malicious",
+      "category": "malware-distribution",
+      "threat_type": "Malware C2",
+      "malware_families": ["LockBit"],
+      "threat_actors": ["LockBit Group"],
+      "country": "UA",
+      "first_seen": "2024-01-20",
+      "tags": ["c2", "ransomware", "lockbit"]
+    },
+    "marketing-analytics-tracker.com": {
+      "reputation": "suspicious",
+      "category": "tracking",
+      "threat_type": "Suspicious Tracker",
+      "malware_families": [],
+      "threat_actors": [],
+      "country": "US",
+      "first_seen": "2024-03-01",
+      "tags": ["tracker", "analytics", "low-risk"]
+    }
+  },
+  "ips": {
+    "185.199.108.153": {
+      "reputation": "suspicious",
+      "category": "hosting",
+      "threat_type": "Suspicious C2",
+      "malware_families": ["Cobalt Strike"],
+      "threat_actors": ["FIN7"],
+      "country": "NL",
+      "asn": "AS60781",
+      "isp": "LeaseWeb Netherlands",
+      "tags": ["c2", "cobalt-strike"]
+    },
+    "45.33.32.156": {
+      "reputation": "malicious",
+      "category": "c2",
+      "threat_type": "LockBit C2 Server",
+      "malware_families": ["LockBit 3.0"],
+      "threat_actors": ["LockBit Group"],
+      "country": "US",
+      "asn": "AS63949",
+      "isp": "Linode",
+      "tags": ["c2", "ransomware", "lockbit"]
+    }
+  },
+  "hashes": {
+    "5d41402abc4b2a76b9719d911017c592": {
+      "reputation": "malicious",
+      "type": "md5",
+      "malware_family": "LockBit 3.0",
+      "threat_actor": "LockBit Group",
+      "file_type": "PE32 executable",
+      "first_seen": "2024-01-15",
+      "tags": ["ransomware", "lockbit", "payload"]
+    }
+  },
+  "threat_actors": {
+    "FIN7": {
+      "description": "Financially motivated threat actor targeting retail, restaurant, and hospitality industries",
+      "origin": "Russia",
+      "motivation": "Financial",
+      "ttps": ["T1566", "T1190", "T1059.001", "T1003"],
+      "active_since": "2013"
+    },
+    "APT41": {
+      "description": "Chinese state-sponsored threat actor conducting espionage and financially motivated operations",
+      "origin": "China",
+      "motivation": "Espionage, Financial",
+      "ttps": ["T1190", "T1059", "T1547.001", "T1041"],
+      "active_since": "2012"
+    },
+    "LockBit Group": {
+      "description": "Ransomware-as-a-Service group operating LockBit ransomware",
+      "origin": "Unknown",
+      "motivation": "Financial (Ransomware)",
+      "ttps": ["T1566", "T1190", "T1486", "T1041"],
+      "active_since": "2019"
+    },
+    "APT29": {
+      "description": "Russian state-sponsored threat actor (Cozy Bear) targeting government and technology sectors",
+      "origin": "Russia",
+      "motivation": "Espionage",
+      "ttps": ["T1566", "T1190", "T1059.001", "T1003", "T1041"],
+      "active_since": "2008"
+    }
+  }
+}

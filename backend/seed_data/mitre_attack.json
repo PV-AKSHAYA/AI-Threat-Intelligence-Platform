@@ -1,0 +1,149 @@
+{
+  "version": "14.1",
+  "techniques": {
+    "T1566": {
+      "id": "T1566",
+      "name": "Phishing",
+      "tactic": "Initial Access",
+      "description": "Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering.",
+      "detection": "Network intrusion detection systems and email gateways can be used to detect phishing with malicious attachments in transit.",
+      "keywords": ["phishing", "spear phishing", "email", "spearphish", "lure", "social engineering", "credential harvest", "finance"]
+    },
+    "T1566.001": {
+      "id": "T1566.001",
+      "name": "Spear Phishing Attachment",
+      "tactic": "Initial Access",
+      "description": "Adversaries may send spearphishing emails with a malicious attachment in an attempt to gain access to victim systems.",
+      "detection": "Anti-virus can potentially detect malicious documents through signatures.",
+      "keywords": ["attachment", "malicious document", "macro", "word", "excel", "pdf attachment"]
+    },
+    "T1566.002": {
+      "id": "T1566.002",
+      "name": "Spear Phishing Link",
+      "tactic": "Initial Access",
+      "description": "Adversaries may send spearphishing emails with a malicious link in an attempt to gain access to victim systems.",
+      "detection": "URL inspection within email, network traffic analysis.",
+      "keywords": ["phishing link", "malicious url", "credential phishing", "login page", "fake login", "secure-login", "update.com"]
+    },
+    "T1190": {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "description": "Adversaries may attempt to exploit a weakness in an Internet-facing host or system to initially access a network.",
+      "detection": "Monitor application logs for abnormal behavior that may indicate attempted or successful exploitation.",
+      "keywords": ["cve", "exploit", "vulnerability", "rce", "remote code execution", "public facing", "citrix", "apache", "log4j", "struts", "weblogic", "exchange"]
+    },
+    "T1059": {
+      "id": "T1059",
+      "name": "Command and Scripting Interpreter",
+      "tactic": "Execution",
+      "description": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries.",
+      "detection": "Monitor for suspicious process execution from interpreter programs.",
+      "keywords": ["command", "script", "interpreter", "shell", "execute", "run", "cmd"]
+    },
+    "T1059.001": {
+      "id": "T1059.001",
+      "name": "PowerShell",
+      "tactic": "Execution",
+      "description": "Adversaries may abuse PowerShell commands and scripts for execution.",
+      "detection": "Enable PowerShell logging (module, script block, transcription).",
+      "keywords": ["powershell", "ps1", "invoke-expression", "iex", "encoded command", "bypass", "noprofile"]
+    },
+    "T1059.003": {
+      "id": "T1059.003",
+      "name": "Windows Command Shell",
+      "tactic": "Execution",
+      "description": "Adversaries may abuse the Windows command shell for execution.",
+      "detection": "Monitor for suspicious cmd.exe execution.",
+      "keywords": ["cmd.exe", "command prompt", "batch", "bat file", "windows command"]
+    },
+    "T1547.001": {
+      "id": "T1547.001",
+      "name": "Registry Run Keys / Startup Folder",
+      "tactic": "Persistence",
+      "description": "Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key.",
+      "detection": "Monitor Registry for changes to run keys.",
+      "keywords": ["registry", "run key", "startup", "persistence", "autorun", "hkcu", "hklm", "currentversion\\run"]
+    },
+    "T1068": {
+      "id": "T1068",
+      "name": "Exploitation for Privilege Escalation",
+      "tactic": "Privilege Escalation",
+      "description": "Adversaries may exploit software vulnerabilities in an attempt to elevate privileges.",
+      "detection": "Monitor for exploitation indicators using intrusion detection systems.",
+      "keywords": ["privilege escalation", "privesc", "exploit", "elevation", "local privilege", "kernel exploit", "uac bypass"]
+    },
+    "T1003": {
+      "id": "T1003",
+      "name": "OS Credential Dumping",
+      "tactic": "Credential Access",
+      "description": "Adversaries may attempt to dump credentials to obtain account login and credential material.",
+      "detection": "Monitor for unexpected processes accessing LSASS memory.",
+      "keywords": ["credential dump", "password dump", "lsass", "mimikatz", "hash dump", "credential theft", "credential access", "ntlm", "kerberos"]
+    },
+    "T1021": {
+      "id": "T1021",
+      "name": "Remote Services",
+      "tactic": "Lateral Movement",
+      "description": "Adversaries may use valid accounts to log into a service specifically designed to accept remote connections.",
+      "detection": "Monitor for user accounts logging into services via Remote Desktop Protocol (RDP) or SSH.",
+      "keywords": ["lateral movement", "remote desktop", "rdp", "ssh", "smb", "psexec", "wmi", "remote service", "vpn access"]
+    },
+    "T1041": {
+      "id": "T1041",
+      "name": "Exfiltration Over C2 Channel",
+      "tactic": "Exfiltration",
+      "description": "Adversaries may steal data by exfiltrating it over an existing command and control channel.",
+      "detection": "Analyze network data for uncommon data flows.",
+      "keywords": ["exfiltration", "c2", "command and control", "data theft", "data exfil", "exfiltrate", "steal data", "upload", "beacon"]
+    },
+    "T1486": {
+      "id": "T1486",
+      "name": "Data Encrypted for Impact",
+      "tactic": "Impact",
+      "description": "Adversaries may encrypt data on target systems or on large numbers of systems in a network to interrupt availability to system and network resources.",
+      "detection": "Monitor for large amounts of file modifications.",
+      "keywords": ["ransomware", "encrypt", "lockbit", "conti", "blackcat", "alphv", "ryuk", "ransom", "decrypt", "cryptolocker", "impact"]
+    },
+    "T1071": {
+      "id": "T1071",
+      "name": "Application Layer Protocol",
+      "tactic": "Command and Control",
+      "description": "Adversaries may communicate using application layer protocols to avoid detection/network filtering.",
+      "detection": "Analyze network data for uncommon data flows using application layer protocols.",
+      "keywords": ["c2 communication", "http beacon", "dns tunneling", "command control", "malware communication"]
+    },
+    "T1082": {
+      "id": "T1082",
+      "name": "System Information Discovery",
+      "tactic": "Discovery",
+      "description": "An adversary may attempt to get detailed information about the operating system and hardware.",
+      "detection": "Monitor processes and command-line arguments for actions that could be taken to gather system and network information.",
+      "keywords": ["system discovery", "reconnaissance", "enumeration", "whoami", "systeminfo", "hostname"]
+    },
+    "T1055": {
+      "id": "T1055",
+      "name": "Process Injection",
+      "tactic": "Defense Evasion",
+      "description": "Adversaries may inject code into processes in order to evade process-based defenses as well as possibly elevate privileges.",
+      "detection": "Monitor for processes injecting code into other processes.",
+      "keywords": ["process injection", "dll injection", "shellcode", "inject", "hollowing", "reflective"]
+    }
+  },
+  "tactics": [
+    "Reconnaissance",
+    "Resource Development",
+    "Initial Access",
+    "Execution",
+    "Persistence",
+    "Privilege Escalation",
+    "Defense Evasion",
+    "Credential Access",
+    "Discovery",
+    "Lateral Movement",
+    "Collection",
+    "Command and Control",
+    "Exfiltration",
+    "Impact"
+  ]
+}
