@@ -289,23 +289,12 @@ GET /health
 
 # 📸 Screenshots
 
-Add screenshots here after deployment.
+<img width="1129" height="670" alt="image" src="https://github.com/user-attachments/assets/8da0fac7-6dda-4d6b-97ce-c32c1369fb93" />
+<img width="971" height="590" alt="image" src="https://github.com/user-attachments/assets/e1cfd09f-a349-444b-9cac-6887ffd0642c" />
+<img width="1153" height="604" alt="image" src="https://github.com/user-attachments/assets/e19e2765-cd09-43b6-8d6d-6431deb50ed8" />
 
-Example:
 
-```
-screenshots/
 
-dashboard.png
-
-analysis.png
-
-mitre.png
-
-ioc_graph.png
-
-report.png
-```
 
 ---
 
@@ -341,7 +330,7 @@ report.png
 
 **P.V. Akshaya**
 
-Built for the **SISA AI-Prism Hackathon 2026**
+
 
 ---
 
