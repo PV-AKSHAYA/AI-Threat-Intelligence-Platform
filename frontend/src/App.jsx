@@ -84,6 +84,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
 import AnalysisResult from "./pages/AnalysisResult";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -93,6 +94,7 @@ function App() {
         path="/analysis/:analysisId"
         element={<AnalysisResult />}
       />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

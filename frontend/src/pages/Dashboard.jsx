@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Activity, ShieldCheck } from "lucide-react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ThreatInputCard from "../components/ThreatInputCard";
 import RecentAnalysesTable from "../components/RecentAnalysesTable";
 import DashboardStats from "../components/DashboardStats";
@@ -161,9 +161,11 @@ function Dashboard() {
             <ShieldCheck size={16} />
             SOC Intelligence Console
           </div>
-          <h1>
-            AI Threat Intelligence Platform
-          </h1>
+          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+            <h1>
+              AI Threat Intelligence Platform
+            </h1>
+          </Link>
           <p className="soc-subtitle">
             Submit reports, extract indicators, map adversary behavior, and review recent investigations from one operational workspace.
           </p>

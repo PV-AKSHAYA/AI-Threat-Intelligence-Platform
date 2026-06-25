@@ -25,8 +25,8 @@ SCORE_HIGH_IOC_REPUTATION = 20
 RISK_LEVELS = [
     (81, 100, "critical", "#EF4444"),
     (61, 80, "high", "#F97316"),
-    (31, 60, "medium", "#EAB308"),
-    (0, 30, "low", "#22C55E"),
+    (21, 60, "medium", "#EAB308"),
+    (0, 20, "low", "#22C55E"),
 ]
 
 
@@ -94,12 +94,24 @@ def calculate_risk(
         ))
         total += rep_score
 
+     # ── IOC Diversity Bonus ─────────────────────────────────────────
+    ioc_types = len(set(i.type for i in iocs))
+
+    if ioc_types >= 3:
+      factors.append(
+        RiskFactor(
+            factor=f"Multiple IOC types detected ({ioc_types} types)",
+            score=20
+        )
+    )
+    total += 20   
+
     # ── IOC Volume Bonus ──────────────────────────────────────────────────────
     total_iocs = len(iocs)
     if total_iocs >= 5 and total == 0:
         # Some base score for having multiple IOCs even without enrichment
-        factors.append(RiskFactor(factor=f"Multiple IOCs detected ({total_iocs})", score=5))
-        total += 5
+        factors.append(RiskFactor(factor=f"Multiple IOCs detected ({total_iocs})", score=15))
+        total += 15
 
     # Clamp to 0-100
     total = max(0, min(100, total))
