@@ -6,7 +6,6 @@ google-auth==2.55.0
 google-genai==2.8.0
 httpx==0.28.1
 pydantic==2.11.7
-pydantic_core==2.33.2
 python-dotenv==1.2.2
 python-multipart==0.0.20
 pypdf==5.8.0
